@@ -11,11 +11,11 @@
     <title>Document</title>
 </head>
 <body>
-<h1 style="text-align: center; margin: 50px 0">Parduotuvių Sąrašas</h1>
+<H1>Store list</H1>
 <div class="container">
     <div class="card">
         <div class="card-block">
-            <table class="table table-hover">
+            <table>
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -43,22 +43,18 @@
 
                 </tbody>
             </table>
-            <hr/>
-            <ul class="nav nav-pills">
-                <li class="nav-item"
-                    th:each="i:${#numbers.sequence(0,3)}">
-                    <a th:href="@{/(page=${i})}" th:text="${i}" class="nav-link"></a>
-                </li>
 
-            </ul>
+
 
         </div>
-
 
     </div>
 
 
+
+
 </div>
+</table>
 
 </body>
 </html>

@@ -3,15 +3,15 @@ package com.example.springstore.service;
 import com.example.springstore.dao.StoreDao;
 import com.example.springstore.model.Store;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
-public class StoreService {
+public class StoreService extends ProductsInStoreService{
     private final StoreDao storeDao;
 
     @Autowired
@@ -64,10 +64,11 @@ public class StoreService {
         } else
             storeDao.save(store);
     }
-    public List<Store> getallStoresWithProducts() {
-        List<Store> stores=  storeDao.findAll().stream()
-                .sorted(Comparator.comparing((Store store) -> store.getProductInStores().size())
-                        .reversed()).collect(Collectors.toList());
+    public List<Store> getallStoresWithProducts(int page) {
+        List<Store> stores=  storeDao.findAll(PageRequest.of(page,4, Sort.unsorted())).getContent();
+//                stream()
+//                .sorted(Comparator.comparing((Store store) -> store.getProductInStores().size())
+//                        .reversed()).collect(Collectors.toList());
         return stores;
     }
 

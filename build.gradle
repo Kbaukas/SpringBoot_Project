@@ -20,6 +20,10 @@ tasks.withType(JavaCompile) {
 dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.3.0.RELEASE'
+// https://mvnrepository.com/artifact/org.webjars/bootstrap
+    compile group: 'org.webjars', name: 'bootstrap', version: '4.5.0'
+// https://mvnrepository.com/artifact/org.webjars.bower/jquery
+    compile group: 'org.webjars.bower', name: 'jquery', version: '3.5.1'
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     implementation 'org.springframework.boot:spring-boot-starter-web'

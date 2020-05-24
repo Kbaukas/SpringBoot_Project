@@ -7,9 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.List;
-import java.util.stream.Collectors;
+import org.springframework.web.bind.annotation.RequestParam;
 
 //@RequestMapping("/store")
 //        (value = "api/store/id",method = RequestMethod.GET)
@@ -29,10 +27,10 @@ public class StoreController {
         if (store == null) return zinute;
         return store.getName();
     }
-
-    @GetMapping("/parduotuves")
-    public List<String> getStoresNames() {
-        return storeService.getALL().stream().map(store -> store.getName()).collect(Collectors.toList());
+//
+    @GetMapping("/stores")
+    public String getStoresNames() {
+        return "index";
     }
 
     @DeleteMapping
@@ -40,9 +38,9 @@ public class StoreController {
         storeService.deleteStore(id);
     }
 
-    @GetMapping({ "/", "/stores" })
-    public String getallStores(Model model){
-        model.addAttribute("stores",storeService.getallStoresWithProducts());
+    @GetMapping({ "/" })
+    public String getallStores(Model model,@RequestParam(defaultValue = "0") int page){
+        model.addAttribute("stores",storeService.getallStoresWithProducts(page));
         return "list";
 //    @GetMapping({ "/", "/list" })
 //    public String getallStores(Model model){
