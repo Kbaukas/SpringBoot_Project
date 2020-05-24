@@ -28,7 +28,7 @@ public class StoreController {
         return store.getName();
     }
 //
-    @GetMapping("/stores")
+    @GetMapping("/s")
     public String getStoresNames() {
         return "index";
     }
@@ -41,7 +41,7 @@ public class StoreController {
     @GetMapping({ "/" })
     public String getallStores(Model model,@RequestParam(defaultValue = "0") int page){
         model.addAttribute("stores",storeService.getallStoresWithProducts(page));
-        return "list";
+        return "lentele";
 //    @GetMapping({ "/", "/list" })
 //    public String getallStores(Model model){
 //        model.addAttribute("name",storeService.getStoreByID(1).get().getName());
