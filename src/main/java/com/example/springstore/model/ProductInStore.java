@@ -53,4 +53,13 @@ public class ProductInStore implements Serializable {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
+    @Override
+    public String toString() {
+        return "ProductInStore{" +
+                "product=" + product.getName() +
+               ", price=" + price +
+                ", quantity=" + quantity +
+                '}'+"  ";
+    }
 }

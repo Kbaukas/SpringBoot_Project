@@ -98,6 +98,7 @@ public class DienynasDBUzduotys implements CommandLineRunner {
         System.out.println("-----------------------------------------------------------------------------------------");
 // ----------------------------------su Query ---------------------------------------------------
         productDao.findProductsIfInStore().forEach(product -> System.out.println(product.getName()));
+
     }
 //
 
