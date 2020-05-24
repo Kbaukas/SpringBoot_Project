@@ -5,8 +5,8 @@ import java.io.Serializable;
 
 @Embeddable
 public class ProductStoreID implements Serializable {
-    Product product;
-    Store store;
+    private Product product;
+   private Store store;
 
 
 }

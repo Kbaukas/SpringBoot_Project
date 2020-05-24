@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RequestMapping("api/store/")
+@RequestMapping("/store")
 //        (value = "api/v1/store/id",method = RequestMethod.GET)
 @RestController
 public class StoreController {
