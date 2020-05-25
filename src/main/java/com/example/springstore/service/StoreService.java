@@ -2,7 +2,6 @@ package com.example.springstore.service;
 
 import com.example.springstore.dao.StoreDao;
 import com.example.springstore.model.Store;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -14,8 +13,7 @@ import java.util.Optional;
 public class StoreService{
     private final StoreDao storeDao;
 
-    @Autowired
-    public StoreService(StoreDao storeDao) {
+       public StoreService(StoreDao storeDao) {
         this.storeDao = storeDao;
     }
 

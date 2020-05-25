@@ -39,7 +39,7 @@ public class StoreController {
     }
 
     @GetMapping({ "/" })
-    public String getallStores(Model model,@RequestParam(defaultValue = "0") int page){
+     String getallStores(Model model,@RequestParam(defaultValue = "0") int page){
         model.addAttribute("stores",storeService.getallStoresWithProducts(page));
         return "lentele";
 //    @GetMapping({ "/", "/list" })
