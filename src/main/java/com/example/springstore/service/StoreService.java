@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StoreService extends ProductsInStoreService{
+public class StoreService{
     private final StoreDao storeDao;
 
     @Autowired
